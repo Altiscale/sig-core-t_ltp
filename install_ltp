@@ -1,0 +1,21 @@
+
+LTPtext='LTP-Testsuite:'
+
+function quit {
+  echo "Fatal: $1"
+  exit 1
+}
+
+
+yum -y update
+uname -a
+echo "`date +%H:%M:%S` - $LTPtext Installing prerequisite packages"
+yum -y groupinstall "Development Tools" >/dev/null || quit 'yum install dev tools failed'
+echo "`date +%H:%M:%S` - $LTPtext running configure"
+./configure >/dev/null 2>&1 || quit './configure failed'
+echo "`date +%H:%M:%S` - $LTPtext running make"
+make all >/dev/null || quit 'make all failed'
+echo "`date +%H:%M:%S` - $LTPtext installing"
+make install >/dev/null || quit 'make install failed'
+
+echo '******************* LTP Installed *******************'
