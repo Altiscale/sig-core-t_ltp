@@ -2,7 +2,7 @@
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   machines = [
-    { name: "centos7", box: "centos-7" },
+    # { name: "centos7", box: "centos-7" },
     {
       name: "prometheus-6.5.14",
       box: "prometheus-6.5.14-201602120407",
@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     myvm.vm.box = box
     myvm.vm.hostname = hname
     myvm.vm.box_url = box_url
-    myvm.vm.synced_folder ".", "/t_ltp", type: "rsync"
+    myvm.vm.synced_folder ".", "/t_ltp", type: "rsync", rsync__exclude: ".git/"
     end
   end
 end

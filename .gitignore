@@ -1,0 +1,4 @@
+# Editor swapfiles
+.*.sw?
+
+.vagrant/
