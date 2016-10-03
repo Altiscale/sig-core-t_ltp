@@ -12,6 +12,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       name: 'prometheus-6.6',
       box: 'prometheus-6.6.0-201512171721',
       box_url: 'https://s3-us-west-1.amazonaws.com/com.altiscale.vagrant/prometheus/boxes/prometheus-6.6.0-201512171721.box?AWSAccessKeyId=AKIAIKOVEEW6FVT5JBQA&Expires=1765959075&Signature=U0ejkPfz4V0VHbb9JBad7%2FavTro%3D'
+    },
+    {
+      name: 'prometheus-6.6',
+      box: 'prometheus.6.7.3-201606092005',
+      box_url: 'https://s3-us-west-1.amazonaws.com/com.altiscale.vagrant/prometheus/boxes/prometheus-6.7.3-201606092005.box?AWSAccessKeyId=AKIAIKOVEEW6FVT5JBQA&Expires=1781080563&Signature=XBL3swTV4kHcKG3r9QZSsjPNap8%3D'
     }
   ]
 
